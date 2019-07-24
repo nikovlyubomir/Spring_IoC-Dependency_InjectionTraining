@@ -18,4 +18,10 @@ public class FitnessCoach implements Coach{
 		return null;
 	}
 
+	@Override
+	public String getTeam() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

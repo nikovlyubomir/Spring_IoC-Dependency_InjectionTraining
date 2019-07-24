@@ -22,19 +22,14 @@
     class="com.springDemo.SadFortuneService">
     </bean>
     
-    
-    
-    
- 	<bean id="myCoach"
- 		class="com.springDemo.TrackCoach">	
- 		<!-- set up constructor injection -->
- 		<constructor-arg ref="sadFortuneService" />
- 	</bean>
  	
- 		<bean id="IvansCoach"
- 		class="com.springDemo.TrackCoach">	
+ 	<bean id="IvanCoach"
+ 		class="com.springDemo.CricketCoach">	
  		<!-- set up constructor injection -->
  		<constructor-arg ref="happyFortuneService" />
+ 		<property name="fortuneService" ref="happyFortuneService"></property>
+ 		<property name="emailAdress" value="nikovlyubomir@gmail.com"></property>
+ 		<property name="team" value="Nikov Team"></property>
  	</bean>
  	
  	

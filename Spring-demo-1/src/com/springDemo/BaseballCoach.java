@@ -28,4 +28,9 @@ public String getDailyFortune() {
 	
 	return fortuneService.getFortune();
 }
+@Override
+public String getTeam() {
+	// TODO Auto-generated method stub
+	return null;
+}
 }
