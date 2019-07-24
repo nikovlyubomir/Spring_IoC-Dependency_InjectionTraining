@@ -9,19 +9,52 @@
 
     <!-- Define your beans here -->
     
-    <bean id="myFortune"
-    class="com.springDemo.HappyFortuneService">
-    </bean>
+
+   <!-- Define your beans here -->
     
-    <bean id="myCoach"
-    class="com.springDemo.TrackCoach">
-    
-    <!-- Set up the constructor injection -->
-    <constructor-arg ref="myFortune"></constructor-arg>
+    <!-- define the dependency -->
+    <bean id="happyFortuneService"
+    		class="com.springDemo.HappyFortuneService">
     </bean>
     
     
+    <bean id="sadFortuneService"
+    class="com.springDemo.SadFortuneService">
+    </bean>
     
+    
+    
+    
+ 	<bean id="myCoach"
+ 		class="com.springDemo.TrackCoach">	
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="sadFortuneService" />
+ 	</bean>
+ 	
+ 		<bean id="IvansCoach"
+ 		class="com.springDemo.TrackCoach">	
+ 		<!-- set up constructor injection -->
+ 		<constructor-arg ref="happyFortuneService" />
+ 	</bean>
+ 	
+ 	
+ 	
+
+
+
+
+
+
+
+
+
+    <bean id="myCricketCoach"
+        class="com.springDemo.CricketCoach"> 
+        
+        <!-- set up setter injection -->
+        <property name="fortuneService" ref="happyFortuneService" />
+
+    </bean>
     
 </beans>
 
